@@ -19,8 +19,11 @@ def get_user_input
 end
 
 def end_game(cards)
-  puts "Sorry, you hit #{cards}. Thanks for playing!"
-
+  if cards > 21
+    puts "Sorry, you hit #{cards}. Thanks for playing!"
+  else
+    puts "Congratulations again! You hit #{cards}!"  
+  end  
 end
 
 def initial_round
@@ -37,7 +40,12 @@ def hit?(cards)
   if input=="h"
     cards += deal_card
   elsif input=="s"
-    return cards
+    if cards==21
+      puts "Congratulations you won!"
+      end_game(cards)
+    else
+      return cards
+    end
   else
     invalid_command
   end
@@ -48,6 +56,7 @@ def invalid_command
   prompt_user
   get_user_input
 end
+
 
 def runner
   welcome
