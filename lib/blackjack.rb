@@ -22,8 +22,8 @@ def end_game(cards)
   if cards > 21
     puts "Sorry, you hit #{cards}. Thanks for playing!"
   else
-    puts "Congratulations again! You hit #{cards}!"  
-  end  
+    puts "Congratulations again! You hit #{cards}!"
+  end
 end
 
 def initial_round
